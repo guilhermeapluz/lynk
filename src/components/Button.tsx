@@ -16,6 +16,7 @@ interface ButtonProps {
   icon?: ReactNode;
   href: string;
   children?: ReactNode;
+  bg?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -25,6 +26,7 @@ export const Button: React.FC<ButtonProps> = ({
   flat = false,
   left = false,
   sm = false,
+  bg = true,
   icon,
   href,
   children,
@@ -45,6 +47,7 @@ export const Button: React.FC<ButtonProps> = ({
       <style jsx>{`
         a {
           text-align: ${left ? "left" : "center"};
+          opacity : 1;
           background: ${!muted ? rawColor : dark ? "#f9fafb" : "#111827"};
           color: ${muted
             ? rawColor
